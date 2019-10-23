@@ -12,7 +12,7 @@
 
 	<artifactId>spring-boot</artifactId>
 
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>spring-boot Maven Webapp</name>
 	<url>http://maven.apache.org</url>
@@ -41,17 +41,9 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-		<!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>javax.servlet-api</artifactId> 
-			<scope>provided</scope> </dependency> -->
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-				<!-- <exclusion> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-tomcat</artifactId> 
-					</exclusion> -->
-			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -74,6 +66,14 @@
 
 	<build>
 		<finalName>spring-boot</finalName>
+		<resources>
+		  <resource>
+		      <directory>src/main/resources/</directory>
+		  </resource>
+		  <resource>
+              <directory>src/main/MATE-INF/</directory>
+          </resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

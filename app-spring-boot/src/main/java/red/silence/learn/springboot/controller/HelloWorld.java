@@ -15,7 +15,7 @@ public class HelloWorld {
 	
 	@RequestMapping("/index")
 	public String indexFtl() {
-		System.out.println("123");
+		
 		return "index";
 	}
 }

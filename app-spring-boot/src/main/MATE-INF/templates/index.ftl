@@ -1,6 +1,7 @@
 <html>
 <head>
 <base href="${request.contextPath}">
+
 <link rel="stylesheet" type="text/css" href="/css/test.css" />
 </head>
 <body>
