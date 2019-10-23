@@ -1,0 +1,15 @@
+debug : true
+
+server :
+    compression :
+        enabled : true
+    port : 80
+
+
+#freemarker
+spring :
+    freemarker : 
+        charset : UTF-8
+        suffix : .ftl
+        content-type : "text/html;charset=UTF-8"
+        requestContextAttribute : request
