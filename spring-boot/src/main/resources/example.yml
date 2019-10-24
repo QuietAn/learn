@@ -1,0 +1,1591 @@
+
+banner:
+    charset: 'UTF-8 # Banner file encoding.'
+    image:
+        height: '# Height of the banner image in chars (default based on image height)'
+        invert: '# If images should be inverted for dark terminal themes (default
+            false)'
+        location: 'classpath:banner.gif # Banner image file location (jpg/png can
+            also be used).'
+        margin: '# Left hand image margin in chars (default 2)'
+        width: '# Width of the banner image in chars (default 76)'
+    location: 'classpath:banner.txt # Banner file location.'
+endpoints:
+    actuator:
+        enabled: 'true # Enable the endpoint.'
+        path: '# Endpoint URL path.'
+        sensitive: 'false # Enable security on the endpoint.'
+    auditevents:
+        enabled: '# Enable the endpoint.'
+        path: '# Endpoint path.'
+        sensitive: 'false # Enable security on the endpoint.'
+    autoconfig:
+        enabled: '# Enable the endpoint.'
+        id: '# Endpoint identifier.'
+        path: '# Endpoint path.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+    beans:
+        enabled: '# Enable the endpoint.'
+        id: '# Endpoint identifier.'
+        path: '# Endpoint path.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+    configprops:
+        enabled: '# Enable the endpoint.'
+        id: '# Endpoint identifier.'
+        keys-to-sanitize: 'password,secret,key,token,.*credentials.*,vcap_services
+            # Keys that should be sanitized. Keys can be simple strings that the property
+            ends with or regex expressions.'
+        path: '# Endpoint path.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+    cors:
+        allow-credentials: '# Set whether credentials are supported. When not set,
+            credentials are not supported.'
+        allowed-headers: '# Comma-separated list of headers to allow in a request.
+            ''*'' allows all headers.'
+        allowed-methods: 'GET # Comma-separated list of methods to allow. ''*'' allows
+            all methods.'
+        allowed-origins: '# Comma-separated list of origins to allow. ''*'' allows
+            all origins. When not set, CORS support is disabled.'
+        exposed-headers: '# Comma-separated list of headers to include in a response.'
+        max-age: '1800 # How long, in seconds, the response from a pre-flight request
+            can be cached by clients.'
+    docs:
+        curies:
+            enabled: 'false # Enable the curie generation.'
+        enabled: 'true # Enable actuator docs endpoint.'
+        path: '/docs #'
+        sensitive: 'false #'
+    dump:
+        enabled: '# Enable the endpoint.'
+        id: '# Endpoint identifier.'
+        path: '# Endpoint path.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+    enabled: 'true # Enable endpoints.'
+    env:
+        enabled: '# Enable the endpoint.'
+        id: '# Endpoint identifier.'
+        keys-to-sanitize: 'password,secret,key,token,.*credentials.*,vcap_services
+            # Keys that should be sanitized. Keys can be simple strings that the property
+            ends with or regex expressions.'
+        path: '# Endpoint path.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+    flyway:
+        enabled: '# Enable the endpoint.'
+        id: '# Endpoint identifier.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+    health:
+        enabled: '# Enable the endpoint.'
+        id: '# Endpoint identifier.'
+        mapping:
+            '*': '# Mapping of health statuses to HttpStatus codes. By default, registered
+                health statuses map to sensible defaults (i.e. UP maps to 200).'
+        path: '# Endpoint path.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+        time-to-live: '1000 # Time to live for cached result, in milliseconds.'
+    heapdump:
+        enabled: '# Enable the endpoint.'
+        path: '# Endpoint path.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+    hypermedia:
+        enabled: 'false # Enable hypermedia support for endpoints.'
+    info:
+        enabled: '# Enable the endpoint.'
+        id: '# Endpoint identifier.'
+        path: '# Endpoint path.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+    jmx:
+        domain: '# JMX domain name. Initialized with the value of ''spring.jmx.default-domain''
+            if set.'
+        enabled: 'true # Enable JMX export of all endpoints.'
+        static-names: '# Additional static properties to append to all ObjectNames
+            of MBeans representing Endpoints.'
+        unique-names: 'false # Ensure that ObjectNames are modified in case of conflict.'
+    jolokia:
+        enabled: 'true # Enable Jolokia endpoint.'
+        path: '/jolokia # Endpoint URL path.'
+        sensitive: 'true # Enable security on the endpoint.'
+    liquibase:
+        enabled: '# Enable the endpoint.'
+        id: '# Endpoint identifier.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+    logfile:
+        enabled: 'true # Enable the endpoint.'
+        external-file: '# External Logfile to be accessed.'
+        path: '/logfile # Endpoint URL path.'
+        sensitive: 'true # Enable security on the endpoint.'
+    loggers:
+        enabled: 'true # Enable the endpoint.'
+        id: '# Endpoint identifier.'
+        path: '/logfile # Endpoint path.'
+        sensitive: 'true # Mark if the endpoint exposes sensitive information.'
+    mappings:
+        enabled: '# Enable the endpoint.'
+        id: '# Endpoint identifier.'
+        path: '# Endpoint path.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+    metrics:
+        enabled: '# Enable the endpoint.'
+        filter:
+            counter-submissions: 'merged # Http filter counter submissions (merged,
+                per-http-method)'
+            enabled: 'true # Enable the metrics servlet filter.'
+            gauge-submissions: 'merged # Http filter gauge submissions (merged, per-http-method)'
+        id: '# Endpoint identifier.'
+        path: '# Endpoint path.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+    sensitive: '# Default endpoint sensitive setting.'
+    shutdown:
+        enabled: '# Enable the endpoint.'
+        id: '# Endpoint identifier.'
+        path: '# Endpoint path.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+    trace:
+        enabled: '# Enable the endpoint.'
+        id: '# Endpoint identifier.'
+        path: '# Endpoint path.'
+        sensitive: '# Mark if the endpoint exposes sensitive information.'
+flyway:
+    baseline-description: '#'
+    baseline-on-migrate: '#'
+    baseline-version: '1 # version to start migration'
+    check-location: 'false # Check that migration scripts location exists.'
+    clean-on-validation-error: '#'
+    enabled: 'true # Enable flyway.'
+    encoding: '#'
+    ignore-failed-future-migration: '#'
+    init-sqls: '# SQL statements to execute to initialize a connection immediately
+        after obtaining it.'
+    locations: 'classpath:db/migration # locations of migrations scripts'
+    out-of-order: '#'
+    password: '# JDBC password if you want Flyway to create its own DataSource'
+    placeholder-prefix: '#'
+    placeholder-replacement: '#'
+    placeholder-suffix: '#'
+    placeholders:
+        '*': '#'
+    schemas: '# schemas to update'
+    sql-migration-prefix: 'V #'
+    sql-migration-separator: '#'
+    sql-migration-suffix: '.sql #'
+    table: '#'
+    url: '# JDBC url of the database to migrate. If not set, the primary configured
+        data source is used.'
+    user: '# Login user of the database to migrate.'
+    validate-on-migrate: '#'
+jolokia:
+    config:
+        '*': '# See Jolokia manual'
+liquibase:
+    change-log: 'classpath:/db/changelog/db.changelog-master.yaml # Change log configuration
+        path.'
+    check-change-log-location: 'true # Check the change log location exists.'
+    contexts: '# Comma-separated list of runtime contexts to use.'
+    default-schema: '# Default database schema.'
+    drop-first: 'false # Drop the database schema first.'
+    enabled: 'true # Enable liquibase support.'
+    labels: '# Comma-separated list of runtime labels to use.'
+    parameters:
+        '*': '# Change log parameters.'
+    password: '# Login password of the database to migrate.'
+    rollback-file: '# File to which rollback SQL will be written when an update is
+        performed.'
+    url: '# JDBC url of the database to migrate. If not set, the primary configured
+        data source is used.'
+    user: '# Login user of the database to migrate.'
+logging:
+    config: '# Location of the logging configuration file. For instance `classpath:logback.xml`
+        for Logback'
+    exception-conversion-word: '%wEx # Conversion word used when logging exceptions.'
+    file: '# Log file name. For instance `myapp.log`'
+    level:
+        '*': '# Log levels severity mapping. For instance `logging.level.org.springframework=DEBUG`'
+    path: '# Location of the log file. For instance `/var/log`'
+    pattern:
+        console: '# Appender pattern for output to the console. Only supported with
+            the default logback setup.'
+        file: '# Appender pattern for output to the file. Only supported with the
+            default logback setup.'
+        level: '# Appender pattern for log level (default %5p). Only supported with
+            the default logback setup.'
+    register-shutdown-hook: 'false # Register a shutdown hook for the logging system
+        when it is initialized.'
+management:
+    add-application-context-header: 'true # Add the "X-Application-Context" HTTP header
+        in each response.'
+    address: '# Network address that the management endpoints should bind to.'
+    cloudfoundry:
+        enabled: '# Enable extended Cloud Foundry actuator endpoints'
+        skip-ssl-validation: '# Skip SSL verification for Cloud Foundry actuator endpoint
+            security calls'
+    context-path: '# Management endpoint context-path. For instance `/actuator`'
+    health:
+        cassandra:
+            enabled: 'true # Enable cassandra health check.'
+        couchbase:
+            enabled: 'true # Enable couchbase health check.'
+        db:
+            enabled: 'true # Enable database health check.'
+        defaults:
+            enabled: 'true # Enable default health indicators.'
+        diskspace:
+            enabled: 'true # Enable disk space health check.'
+            path: '# Path used to compute the available disk space.'
+            threshold: '0 # Minimum disk space that should be available, in bytes.'
+        elasticsearch:
+            enabled: 'true # Enable elasticsearch health check.'
+            indices: '# Comma-separated index names.'
+            response-timeout: '100 # The time, in milliseconds, to wait for a response
+                from the cluster.'
+        jms:
+            enabled: 'true # Enable JMS health check.'
+        ldap:
+            enabled: 'true # Enable LDAP health check.'
+        mail:
+            enabled: 'true # Enable Mail health check.'
+        mongo:
+            enabled: 'true # Enable MongoDB health check.'
+        rabbit:
+            enabled: 'true # Enable RabbitMQ health check.'
+        redis:
+            enabled: 'true # Enable Redis health check.'
+        solr:
+            enabled: 'true # Enable Solr health check.'
+        status:
+            order: 'DOWN, OUT_OF_SERVICE, UP, UNKNOWN # Comma-separated list of health
+                statuses in order of severity.'
+    info:
+        build:
+            enabled: 'true # Enable build info.'
+        defaults:
+            enabled: 'true # Enable default info contributors.'
+        env:
+            enabled: 'true # Enable environment info.'
+        git:
+            enabled: 'true # Enable git info.'
+            mode: 'simple # Mode to use to expose git information.'
+    port: '# Management endpoint HTTP port. Uses the same port as the application
+        by default. Configure a different port to use management-specific SSL.'
+    security:
+        enabled: 'true # Enable security.'
+        roles: 'ACTUATOR # Comma-separated list of roles that can access the management
+            endpoint.'
+        sessions: 'stateless # Session creating policy to use (always, never, if_required,
+            stateless).'
+    shell:
+        auth:
+            jaas:
+                domain: 'my-domain # JAAS domain.'
+            key:
+                path: '# Path to the authentication key. This should point to a valid
+                    ".pem" file.'
+            simple:
+                user:
+                    name: 'user # Login user.'
+                    password: '# Login password.'
+            spring:
+                roles: 'ACTUATOR # Comma-separated list of required roles to login
+                    to the CRaSH console.'
+            type: 'simple # Authentication type. Auto-detected according to the environment.'
+        command-path-patterns: 'classpath*:/commands/**,classpath*:/crash/commands/**
+            # Patterns to use to look for commands.'
+        command-refresh-interval: '-1 # Scan for changes and update the command if
+            necessary (in seconds).'
+        config-path-patterns: 'classpath*:/crash/* # Patterns to use to look for configurations.'
+        disabled-commands: 'jpa*,jdbc*,jndi* # Comma-separated list of commands to
+            disable.'
+        disabled-plugins: '# Comma-separated list of plugins to disable. Certain plugins
+            are disabled by default based on the environment.'
+        ssh:
+            auth-timeout: '# Number of milliseconds after user will be prompted to
+                login again.'
+            enabled: 'true # Enable CRaSH SSH support.'
+            idle-timeout: '# Number of milliseconds after which unused connections
+                are closed.'
+            key-path: '# Path to the SSH server key.'
+            port: '2000 # SSH port.'
+        telnet:
+            enabled: 'false # Enable CRaSH telnet support. Enabled by default if the
+                TelnetPlugin is  available.'
+            port: '5000 # Telnet port.'
+    ssl:
+        ciphers: '# Supported SSL ciphers. Requires a custom management.port.'
+        client-auth: '# Whether client authentication is wanted ("want") or needed
+            ("need"). Requires a trust store. Requires a custom management.port.'
+        enabled: '# Enable SSL support. Requires a custom management.port.'
+        enabled-protocols: '# Enabled SSL protocols. Requires a custom management.port.'
+        key-alias: '# Alias that identifies the key in the key store. Requires a custom
+            management.port.'
+        key-password: '# Password used to access the key in the key store. Requires
+            a custom management.port.'
+        key-store: '# Path to the key store that holds the SSL certificate (typically
+            a jks file). Requires a custom management.port.'
+        key-store-password: '# Password used to access the key store. Requires a custom
+            management.port.'
+        key-store-provider: '# Provider for the key store. Requires a custom management.port.'
+        key-store-type: '# Type of the key store. Requires a custom management.port.'
+        protocol: 'TLS # SSL protocol to use. Requires a custom management.port.'
+        trust-store: '# Trust store that holds SSL certificates. Requires a custom
+            management.port.'
+        trust-store-password: '# Password used to access the trust store. Requires
+            a custom management.port.'
+        trust-store-provider: '# Provider for the trust store. Requires a custom management.port.'
+        trust-store-type: '# Type of the trust store. Requires a custom management.port.'
+    trace:
+        include: 'request-headers,response-headers,cookies,errors # Items to be included
+            in the trace.'
+security:
+    basic:
+        authorize-mode: 'role # Security authorize mode to apply.'
+        enabled: 'true # Enable basic authentication.'
+        path: '/** # Comma-separated list of paths to secure.'
+        realm: 'Spring # HTTP basic realm name.'
+    enable-csrf: 'false # Enable Cross Site Request Forgery support.'
+    filter-dispatcher-types: 'ASYNC, FORWARD, INCLUDE, REQUEST # Security filter chain
+        dispatcher types.'
+    filter-order: '0 # Security filter chain order.'
+    headers:
+        cache: 'true # Enable cache control HTTP headers.'
+        content-security-policy: '# Value for content security policy header.'
+        content-security-policy-mode: 'default # Content security policy mode.'
+        content-type: 'true # Enable "X-Content-Type-Options" header.'
+        frame: 'true # Enable "X-Frame-Options" header.'
+        hsts: 'all # HTTP Strict Transport Security (HSTS) mode (none, domain, all).'
+        xss: 'true # Enable cross site scripting (XSS) protection.'
+    ignored: '# Comma-separated list of paths to exclude from the default secured
+        paths.'
+    oauth2:
+        client:
+            client-id: '# OAuth2 client id.'
+            client-secret: '# OAuth2 client secret. A random secret is generated by
+                default'
+        resource:
+            filter-order: '# The order of the filter chain used to authenticate tokens.'
+            id: '# Identifier of the resource.'
+            jwt:
+                key-uri: '# The URI of the JWT token. Can be set if the value is not
+                    available and the key is public.'
+                key-value: '# The verification key of the JWT token. Can either be
+                    a symmetric secret or PEM-encoded RSA public key.'
+            prefer-token-info: 'true # Use the token info, can be set to false to
+                use the user info.'
+            service-id: 'resource #'
+            token-info-uri: '# URI of the token decoding endpoint.'
+            token-type: '# The token type to send when using the userInfoUri.'
+            user-info-uri: '# URI of the user endpoint.'
+        sso:
+            filter-order: '# Filter order to apply if not providing an explicit WebSecurityConfigurerAdapter'
+            login-path: '/login # Path to the login page, i.e. the one that triggers
+                the redirect to the OAuth2 Authorization Server'
+    require-ssl: 'false # Enable secure channel for all requests.'
+    sessions: 'stateless # Session creation policy (always, never, if_required, stateless).'
+    user:
+        name: 'user # Default user name.'
+        password: '# Password for the default user name. A random password is logged
+            on startup by default.'
+        role: 'USER # Granted roles for the default user name.'
+server:
+    address: '# Network address to which the server should bind to.'
+    compression:
+        enabled: 'false # If response compression is enabled.'
+        excluded-user-agents: '# List of user-agents to exclude from compression.'
+        mime-types: '# Comma-separated list of MIME types that should be compressed.
+            For instance `text/html,text/css,application/json`'
+        min-response-size: '# Minimum response size that is required for compression
+            to be performed. For instance 2048'
+    connection-timeout: '# Time in milliseconds that connectors will wait for another
+        HTTP request before closing the connection. When not set, the connector''s
+        container-specific default will be used. Use a value of -1 to indicate no
+        (i.e. infinite) timeout.'
+    context-parameters:
+        '*': '# Servlet context init parameters. For instance `server.context-parameters.a=alpha`'
+    context-path: '# Context path of the application.'
+    display-name: 'application # Display name of the application.'
+    error:
+        include-stacktrace: 'never # When to include a "stacktrace" attribute.'
+        path: '/error # Path of the error controller.'
+        whitelabel:
+            enabled: 'true # Enable the default error page displayed in browsers in
+                case of a server error.'
+    jetty:
+        acceptors: '# Number of acceptor threads to use.'
+        max-http-post-size: '0 # Maximum size in bytes of the HTTP post or put content.'
+        selectors: '# Number of selector threads to use.'
+    jsp-servlet:
+        class-name: 'org.apache.jasper.servlet.JspServlet # The class name of the
+            JSP servlet.'
+        init-parameters:
+            '*': '# Init parameters used to configure the JSP servlet'
+        registered: 'true # Whether or not the JSP servlet is registered'
+    max-http-header-size: '0 # Maximum size in bytes of the HTTP message header.'
+    port: '8080 # Server HTTP port.'
+    server-header: '# Value to use for the Server response header (no header is sent
+        if empty)'
+    servlet-path: '/ # Path of the main dispatcher servlet.'
+    session:
+        cookie:
+            comment: '# Comment for the session cookie.'
+            domain: '# Domain for the session cookie.'
+            http-only: '# "HttpOnly" flag for the session cookie.'
+            max-age: '# Maximum age of the session cookie in seconds.'
+            name: '# Session cookie name.'
+            path: '# Path of the session cookie.'
+            secure: '# "Secure" flag for the session cookie.'
+        persistent: 'false # Persist session data between restarts.'
+        store-dir: '# Directory used to store session data.'
+        timeout: '# Session timeout in seconds.'
+        tracking-modes: '# Session tracking modes (one or more of the following: "cookie",
+            "url", "ssl").'
+    ssl:
+        ciphers: '# Supported SSL ciphers.'
+        client-auth: '# Whether client authentication is wanted ("want") or needed
+            ("need"). Requires a trust store.'
+        enabled: '# Enable SSL support.'
+        enabled-protocols: '# Enabled SSL protocols.'
+        key-alias: '# Alias that identifies the key in the key store.'
+        key-password: '# Password used to access the key in the key store.'
+        key-store: '# Path to the key store that holds the SSL certificate (typically
+            a jks file).'
+        key-store-password: '# Password used to access the key store.'
+        key-store-provider: '# Provider for the key store.'
+        key-store-type: '# Type of the key store.'
+        protocol: 'TLS # SSL protocol to use.'
+        trust-store: '# Trust store that holds SSL certificates.'
+        trust-store-password: '# Password used to access the trust store.'
+        trust-store-provider: '# Provider for the trust store.'
+        trust-store-type: '# Type of the trust store.'
+    tomcat:
+        accept-count: '# Maximum queue length for incoming connection requests when
+            all possible request processing threads are in use.'
+        accesslog:
+            buffered: 'true # Buffer output such that it is only flushed periodically.'
+            directory: 'logs # Directory in which log files are created. Can be relative
+                to the tomcat base dir or absolute.'
+            enabled: 'false # Enable access log.'
+            pattern: 'common # Format pattern for access logs.'
+            prefix: 'access_log # Log file name prefix.'
+            rename-on-rotate: 'false # Defer inclusion of the date stamp in the file
+                name until rotate time.'
+            request-attributes-enabled: 'false # Set request attributes for IP address,
+                Hostname, protocol and port used for the request.'
+            rotate: 'true # Enable access log rotation.'
+            suffix: '.log # Log file name suffix.'
+        additional-tld-skip-patterns: '# Comma-separated list of additional patterns
+            that match jars to ignore for TLD scanning.'
+        background-processor-delay: '30 # Delay in seconds between the invocation
+            of backgroundProcess methods.'
+        basedir: '# Tomcat base directory. If not specified a temporary directory
+            will be used.'
+        internal-proxies: 10\.\d{1,3}\.\d{1,3}\.\d{1,3}|\
+        max-connections: '# Maximum number of connections that the server will accept
+            and process at any given time.'
+        max-http-post-size: '0 # Maximum size in bytes of the HTTP post content.'
+        max-threads: '0 # Maximum amount of worker threads.'
+        min-spare-threads: '0 # Minimum amount of worker threads.'
+        port-header: 'X-Forwarded-Port # Name of the HTTP header used to override
+            the original port value.'
+        protocol-header: '# Header that holds the incoming protocol, usually named
+            "X-Forwarded-Proto".'
+        protocol-header-https-value: 'https # Value of the protocol header that indicates
+            that the incoming request uses SSL.'
+        redirect-context-root: '# Whether requests to the context root should be redirected
+            by appending a / to the path.'
+        remote-ip-header: '# Name of the http header from which the remote ip is extracted.
+            For instance `X-FORWARDED-FOR`'
+        uri-encoding: 'UTF-8 # Character encoding to use to decode the URI.'
+    undertow:
+        accesslog:
+            dir: '# Undertow access log directory.'
+            enabled: 'false # Enable access log.'
+            pattern: 'common # Format pattern for access logs.'
+            prefix: 'access_log. # Log file name prefix.'
+            rotate: 'true # Enable access log rotation.'
+            suffix: 'log # Log file name suffix.'
+        buffer-size: '# Size of each buffer in bytes.'
+        buffers-per-region: '# Number of buffer per region.'
+        direct-buffers: '# Allocate buffers outside the Java heap.'
+        io-threads: '# Number of I/O threads to create for the worker.'
+        max-http-post-size: '0 # Maximum size in bytes of the HTTP post content.'
+        worker-threads: '# Number of worker threads.'
+    use-forward-headers: '# If X-Forwarded-* headers should be applied to the HttpRequest.'
+spring:
+    activemq:
+        broker-url: '# URL of the ActiveMQ broker. Auto-generated by default. For
+            instance `tcp://localhost:61616`'
+        in-memory: 'true # Specify if the default broker URL should be in memory.
+            Ignored if an explicit broker has been specified.'
+        packages:
+            trust-all: 'false # Trust all packages.'
+            trusted: '# Comma-separated list of specific packages to trust (when not
+                trusting all packages).'
+        password: '# Login password of the broker.'
+        pool:
+            configuration:
+                '*': '# See PooledConnectionFactory.'
+            enabled: 'false # Whether a PooledConnectionFactory should be created
+                instead of a regular ConnectionFactory.'
+            expiry-timeout: '0 # Connection expiration timeout in milliseconds.'
+            idle-timeout: '30000 # Connection idle timeout in milliseconds.'
+            max-connections: '1 # Maximum number of pooled connections.'
+        user: '# Login user of the broker.'
+    aop:
+        auto: 'true # Add @EnableAspectJAutoProxy.'
+        proxy-target-class: 'false # Whether subclass-based (CGLIB) proxies are to
+            be created (true) as opposed to standard Java interface-based proxies
+            (false).'
+    application:
+        admin:
+            enabled: 'false # Enable admin features for the application.'
+            jmx-name: 'org.springframework.boot:type=Admin,name=SpringApplication
+                # JMX name of the application admin MBean.'
+        index: '# Application index.'
+        name: '# Application name.'
+    artemis:
+        embedded:
+            cluster-password: '# Cluster password. Randomly generated on startup by
+                default.'
+            data-directory: '# Journal file directory. Not necessary if persistence
+                is turned off.'
+            enabled: 'true # Enable embedded mode if the Artemis server APIs are available.'
+            persistent: 'false # Enable persistent store.'
+            queues: '# Comma-separated list of queues to create on startup.'
+            server-id: '# Server id. By default, an auto-incremented counter is used.'
+            topics: '# Comma-separated list of topics to create on startup.'
+        host: 'localhost # Artemis broker host.'
+        mode: '# Artemis deployment mode, auto-detected by default.'
+        password: '# Login password of the broker.'
+        port: '61616 # Artemis broker port.'
+        user: '# Login user of the broker.'
+    autoconfigure:
+        exclude: '# Auto-configuration classes to exclude.'
+    batch:
+        initializer:
+            enabled: '# Create the required batch tables on startup if necessary.
+                Enabled automatically if no custom table prefix is set or if a custom
+                schema is configured.'
+        job:
+            enabled: 'true # Execute all Spring Batch jobs in the context on startup.'
+            names: '# Comma-separated list of job names to execute on startup (For
+                instance `job1,job2`). By default, all Jobs found in the context are
+                executed.'
+        schema: 'classpath:org/springframework/batch/core/schema-@@platform@@.sql
+            # Path to the SQL file to use to initialize the database schema.'
+        table-prefix: '# Table prefix for all the batch meta-data tables.'
+    beaninfo:
+        ignore: 'true # Skip search of BeanInfo classes.'
+    cache:
+        cache-names: '# Comma-separated list of cache names to create if supported
+            by the underlying cache manager.'
+        caffeine:
+            spec: '# The spec to use to create caches. Check CaffeineSpec for more
+                details on the spec format.'
+        couchbase:
+            expiration: '0 # Entry expiration in milliseconds. By default the entries
+                never expire.'
+        ehcache:
+            config: '# The location of the configuration file to use to initialize
+                EhCache.'
+        guava:
+            spec: '# The spec to use to create caches. Check CacheBuilderSpec for
+                more details on the spec format.'
+        infinispan:
+            config: '# The location of the configuration file to use to initialize
+                Infinispan.'
+        jcache:
+            config: '# The location of the configuration file to use to initialize
+                the cache manager.'
+            provider: '# Fully qualified name of the CachingProvider implementation
+                to use to retrieve the JSR-107 compliant cache manager. Only needed
+                if more than one JSR-107 implementation is available on the classpath.'
+        type: '# Cache type, auto-detected according to the environment by default.'
+    config:
+        location: '# Config file locations.'
+        name: 'application # Config file name.'
+    couchbase:
+        bootstrap-hosts: '# Couchbase nodes (host or IP address) to bootstrap from.'
+        bucket:
+            name: 'default # Name of the bucket to connect to.'
+            password: '# Password of the bucket.'
+        env:
+            endpoints:
+                key-value: '1 # Number of sockets per node against the Key/value service.'
+                query: '1 # Number of sockets per node against the Query (N1QL) service.'
+                view: '1 # Number of sockets per node against the view service.'
+            ssl:
+                enabled: '# Enable SSL support. Enabled automatically if a "keyStore"
+                    is provided unless specified otherwise.'
+                key-store: '# Path to the JVM key store that holds the certificates.'
+                key-store-password: '# Password used to access the key store.'
+            timeouts:
+                connect: '5000 # Bucket connections timeout in milliseconds.'
+                key-value: '2500 # Blocking operations performed on a specific key
+                    timeout in milliseconds.'
+                query: '7500 # N1QL query operations timeout in milliseconds.'
+                socket-connect: '1000 # Socket connect connections timeout in milliseconds.'
+                view: '7500 # Regular and geospatial view operations timeout in milliseconds.'
+    dao:
+        exceptiontranslation:
+            enabled: 'true # Enable the PersistenceExceptionTranslationPostProcessor.'
+    data:
+        cassandra:
+            cluster-name: '# Name of the Cassandra cluster.'
+            compression: 'none # Compression supported by the Cassandra binary protocol.'
+            connect-timeout-millis: '# Socket option: connection time out.'
+            consistency-level: '# Queries consistency level.'
+            contact-points: 'localhost # Comma-separated list of cluster node addresses.'
+            fetch-size: '# Queries default fetch size.'
+            keyspace-name: '# Keyspace name to use.'
+            load-balancing-policy: '# Class name of the load balancing policy.'
+            password: '# Login password of the server.'
+            port: '# Port of the Cassandra server.'
+            read-timeout-millis: '# Socket option: read time out.'
+            reconnection-policy: '# Reconnection policy class.'
+            retry-policy: '# Class name of the retry policy.'
+            schema-action: 'none # Schema action to take at startup.'
+            serial-consistency-level: '# Queries serial consistency level.'
+            ssl: 'false # Enable SSL support.'
+            username: '# Login user of the server.'
+        couchbase:
+            auto-index: 'false # Automatically create views and indexes.'
+            consistency: 'read-your-own-writes # Consistency to apply by default on
+                generated queries.'
+            repositories:
+                enabled: 'true # Enable Couchbase repositories.'
+        elasticsearch:
+            cluster-name: 'elasticsearch # Elasticsearch cluster name.'
+            cluster-nodes: '# Comma-separated list of cluster node addresses. If not
+                specified, starts a client node.'
+            properties:
+                '*': '# Additional properties used to configure the client.'
+            repositories:
+                enabled: 'true # Enable Elasticsearch repositories.'
+        jpa:
+            repositories:
+                enabled: 'true # Enable JPA repositories.'
+        ldap:
+            repositories:
+                enabled: 'true # Enable LDAP repositories.'
+        mongodb:
+            authentication-database: '# Authentication database name.'
+            database: 'test # Database name.'
+            field-naming-strategy: '# Fully qualified name of the FieldNamingStrategy
+                to use.'
+            grid-fs-database: '# GridFS database name.'
+            host: 'localhost # Mongo server host. Cannot be set with uri.'
+            password: '# Login password of the mongo server. Cannot be set with uri.'
+            port: '27017 # Mongo server port. Cannot be set with uri.'
+            repositories:
+                enabled: 'true # Enable Mongo repositories.'
+            uri: 'mongodb://localhost/test # Mongo database URI. Cannot be set with
+                host, port and credentials.'
+            username: '# Login user of the mongo server. Cannot be set with uri.'
+        neo4j:
+            compiler: '# Compiler to use.'
+            embedded:
+                enabled: 'true # Enable embedded mode if the embedded driver is available.'
+            open-in-view: 'false # Register OpenSessionInViewInterceptor. Binds a
+                Neo4j Session to the thread for the entire processing of the request.'
+            password: '# Login password of the server.'
+            repositories:
+                enabled: 'true # Enable Neo4j repositories.'
+            uri: '# URI used by the driver. Auto-detected by default.'
+            username: '# Login user of the server.'
+        redis:
+            repositories:
+                enabled: 'true # Enable Redis repositories.'
+        rest:
+            base-path: '# Base path to be used by Spring Data REST to expose repository
+                resources.'
+            default-page-size: '# Default size of pages.'
+            detection-strategy: 'default # Strategy to use to determine which repositories
+                get exposed.'
+            enable-enum-translation: '# Enable enum value translation via the Spring
+                Data REST default resource bundle.'
+            limit-param-name: '# Name of the URL query string parameter that indicates
+                how many results to return at once.'
+            max-page-size: '# Maximum size of pages.'
+            page-param-name: '# Name of the URL query string parameter that indicates
+                what page to return.'
+            return-body-on-create: '# Return a response body after creating an entity.'
+            return-body-on-update: '# Return a response body after updating an entity.'
+            sort-param-name: '# Name of the URL query string parameter that indicates
+                what direction to sort results.'
+        solr:
+            host: 'http://127.0.0.1:8983/solr # Solr host. Ignored if "zk-host" is
+                set.'
+            repositories:
+                enabled: 'true # Enable Solr repositories.'
+            zk-host: '# ZooKeeper host address in the form HOST:PORT.'
+    datasource:
+        continue-on-error: 'false # Do not stop if an error occurs while initializing
+            the database.'
+        data: '# Data (DML) script resource references.'
+        data-password: '# Password of the database to execute DML scripts (if different).'
+        data-username: '# User of the database to execute DML scripts (if different).'
+        dbcp2:
+            '*': '# Commons DBCP2 specific settings'
+        driver-class-name: '# Fully qualified name of the JDBC driver. Auto-detected
+            based on the URL by default.'
+        generate-unique-name: 'false # Generate a random datasource name.'
+        hikari:
+            '*': '# Hikari specific settings'
+        initialize: 'true # Populate the database using ''data.sql''.'
+        jmx-enabled: 'false # Enable JMX support (if provided by the underlying pool).'
+        jndi-name: '# JNDI location of the datasource. Class, url, username & password
+            are ignored when set.'
+        name: 'testdb # Name of the datasource.'
+        password: '# Login password of the database.'
+        platform: 'all # Platform to use in the schema resource (schema-${platform}.sql).'
+        schema: '# Schema (DDL) script resource references.'
+        schema-password: '# Password of the database to execute DDL scripts (if different).'
+        schema-username: '# User of the database to execute DDL scripts (if different).'
+        separator: '; # Statement separator in SQL initialization scripts.'
+        sql-script-encoding: '# SQL scripts encoding.'
+        tomcat:
+            '*': '# Tomcat datasource specific settings'
+        type: '# Fully qualified name of the connection pool implementation to use.
+            By default, it is auto-detected from the classpath.'
+        url: '# JDBC url of the database.'
+        username: ''
+    devtools:
+        livereload:
+            enabled: 'true # Enable a livereload.com compatible server.'
+            port: '35729 # Server port.'
+        remote:
+            context-path: '/.~~spring-boot!~ # Context path used to handle the remote
+                connection.'
+            debug:
+                enabled: 'true # Enable remote debug support.'
+                local-port: '8000 # Local remote debug server port.'
+            proxy:
+                host: '# The host of the proxy to use to connect to the remote application.'
+                port: '# The port of the proxy to use to connect to the remote application.'
+            restart:
+                enabled: 'true # Enable remote restart.'
+            secret: '# A shared secret required to establish a connection (required
+                to enable remote support).'
+            secret-header-name: 'X-AUTH-TOKEN # HTTP header used to transfer the shared
+                secret.'
+        restart:
+            additional-exclude: '# Additional patterns that should be excluded from
+                triggering a full restart.'
+            additional-paths: '# Additional paths to watch for changes.'
+            enabled: 'true # Enable automatic restart.'
+            exclude: 'META-INF/maven/**,META-INF/resources/**,resources/**,static/**,public/**,templates/**,**/*Test.class,**/*Tests.class,git.properties
+                # Patterns that should be excluded from triggering a full restart.'
+            poll-interval: '1000 # Amount of time (in milliseconds) to wait between
+                polling for classpath changes.'
+            quiet-period: '400 # Amount of quiet time (in milliseconds) required without
+                any classpath changes before a restart is triggered.'
+            trigger-file: '# Name of a specific file that when changed will trigger
+                the restart check. If not specified any classpath file change will
+                trigger the restart.'
+    elasticsearch:
+        jest:
+            connection-timeout: '3000 # Connection timeout in milliseconds.'
+            multi-threaded: 'true # Enable connection requests from multiple execution
+                threads.'
+            password: '# Login password.'
+            proxy:
+                host: '# Proxy host the HTTP client should use.'
+                port: '# Proxy port the HTTP client should use.'
+            read-timeout: '3000 # Read timeout in milliseconds.'
+            uris: 'http://localhost:9200 # Comma-separated list of the Elasticsearch
+                instances to use.'
+            username: '# Login user.'
+    freemarker:
+        allow-request-override: 'false # Set whether HttpServletRequest attributes
+            are allowed to override (hide) controller generated model attributes of
+            the same name.'
+        allow-session-override: 'false # Set whether HttpSession attributes are allowed
+            to override (hide) controller generated model attributes of the same name.'
+        cache: 'false # Enable template caching.'
+        charset: 'UTF-8 # Template encoding.'
+        check-template-location: 'true # Check that the templates location exists.'
+        content-type: 'text/html # Content-Type value.'
+        enabled: 'true # Enable MVC view resolution for this technology.'
+        expose-request-attributes: 'false # Set whether all request attributes should
+            be added to the model prior to merging with the template.'
+        expose-session-attributes: 'false # Set whether all HttpSession attributes
+            should be added to the model prior to merging with the template.'
+        expose-spring-macro-helpers: 'true # Set whether to expose a RequestContext
+            for use by Spring''s macro library, under the name "springMacroRequestContext".'
+        prefer-file-system-access: 'true # Prefer file system access for template
+            loading. File system access enables hot detection of template changes.'
+        prefix: '# Prefix that gets prepended to view names when building a URL.'
+        request-context-attribute: '# Name of the RequestContext attribute for all
+            views.'
+        settings:
+            '*': '# Well-known FreeMarker keys which will be passed to FreeMarker''s
+                Configuration.'
+        suffix: '# Suffix that gets appended to view names when building a URL.'
+        template-loader-path: 'classpath:/templates/ # Comma-separated list of template
+            paths.'
+        view-names: '# White list of view names that can be resolved.'
+    groovy:
+        template:
+            allow-request-override: 'false # Set whether HttpServletRequest attributes
+                are allowed to override (hide) controller generated model attributes
+                of the same name.'
+            allow-session-override: 'false # Set whether HttpSession attributes are
+                allowed to override (hide) controller generated model attributes of
+                the same name.'
+            cache: '# Enable template caching.'
+            charset: 'UTF-8 # Template encoding.'
+            check-template-location: 'true # Check that the templates location exists.'
+            configuration:
+                '*': '# See GroovyMarkupConfigurer'
+            content-type: 'test/html # Content-Type value.'
+            enabled: 'true # Enable MVC view resolution for this technology.'
+            expose-request-attributes: 'false # Set whether all request attributes
+                should be added to the model prior to merging with the template.'
+            expose-session-attributes: 'false # Set whether all HttpSession attributes
+                should be added to the model prior to merging with the template.'
+            expose-spring-macro-helpers: 'true # Set whether to expose a RequestContext
+                for use by Spring''s macro library, under the name "springMacroRequestContext".'
+            prefix: '# Prefix that gets prepended to view names when building a URL.'
+            request-context-attribute: '# Name of the RequestContext attribute for
+                all views.'
+            resource-loader-path: 'classpath:/templates/ # Template path.'
+            suffix: '.tpl # Suffix that gets appended to view names when building
+                a URL.'
+            view-names: '# White list of view names that can be resolved.'
+    h2:
+        console:
+            enabled: 'false # Enable the console.'
+            path: '/h2-console # Path at which the console will be available.'
+            settings:
+                trace: 'false # Enable trace output.'
+                web-allow-others: 'false # Enable remote access.'
+    hateoas:
+        use-hal-as-default-json-media-type: 'true # Specify if application/hal+json
+            responses should be sent to requests that accept application/json.'
+    hazelcast:
+        config: '# The location of the configuration file to use to initialize Hazelcast.'
+    http:
+        converters:
+            preferred-json-mapper: 'jackson # Preferred JSON mapper to use for HTTP
+                message conversion. Set to "gson" to force the use of Gson when both
+                it and Jackson are on the classpath.'
+        encoding:
+            charset: 'UTF-8 # Charset of HTTP requests and responses. Added to the
+                "Content-Type" header if not set explicitly.'
+            enabled: 'true # Enable http encoding support.'
+            force: '# Force the encoding to the configured charset on HTTP requests
+                and responses.'
+            force-request: '# Force the encoding to the configured charset on HTTP
+                requests. Defaults to true when "force" has not been specified.'
+            force-response: '# Force the encoding to the configured charset on HTTP
+                responses.'
+            mapping: '# Locale to Encoding mapping.'
+        multipart:
+            enabled: 'true # Enable support of multi-part uploads.'
+            file-size-threshold: '0 # Threshold after which files will be written
+                to disk. Values can use the suffixed "MB" or "KB" to indicate a Megabyte
+                or Kilobyte size.'
+            location: '# Intermediate location of uploaded files.'
+            max-file-size: '1MB # Max file size. Values can use the suffixed "MB"
+                or "KB" to indicate a Megabyte or Kilobyte size.'
+            max-request-size: '10MB # Max request size. Values can use the suffixed
+                "MB" or "KB" to indicate a Megabyte or Kilobyte size.'
+            resolve-lazily: 'false # Whether to resolve the multipart request lazily
+                at the time of file or parameter access.'
+    info:
+        build:
+            location: 'classpath:META-INF/build-info.properties # Location of the
+                generated build-info.properties file.'
+        git:
+            location: 'classpath:git.properties # Location of the generated git.properties
+                file.'
+    jackson:
+        date-format: '# Date format string or a fully-qualified date format class
+            name. For instance `yyyy-MM-dd HH:mm:ss`.'
+        default-property-inclusion: '# Controls the inclusion of properties during
+            serialization.'
+        deserialization:
+            '*': '# Jackson on/off features that affect the way Java objects are deserialized.'
+        generator:
+            '*': '# Jackson on/off features for generators.'
+        joda-date-time-format: '# Joda date time format string. If not configured,
+            "date-format" will be used as a fallback if it is configured with a format
+            string.'
+        locale: '# Locale used for formatting.'
+        mapper:
+            '*': '# Jackson general purpose on/off features.'
+        parser:
+            '*': '# Jackson on/off features for parsers.'
+        property-naming-strategy: '# One of the constants on Jackson''s PropertyNamingStrategy.
+            Can also be a fully-qualified class name of a PropertyNamingStrategy subclass.'
+        serialization:
+            '*': '# Jackson on/off features that affect the way Java objects are serialized.'
+        time-zone: '# Time zone used when formatting dates. For instance `America/Los_Angeles`'
+    jersey:
+        application-path: '# Path that serves as the base URI for the application.
+            Overrides the value of "@ApplicationPath" if specified.'
+        filter:
+            order: '0 # Jersey filter chain order.'
+        init:
+            '*': '# Init parameters to pass to Jersey via the servlet or filter.'
+        servlet:
+            load-on-startup: '-1 # Load on startup priority of the Jersey servlet.'
+        type: 'servlet # Jersey integration type.'
+    jms:
+        jndi-name: '# Connection factory JNDI name. When set, takes precedence to
+            others connection factory auto-configurations.'
+        listener:
+            acknowledge-mode: '# Acknowledge mode of the container. By default, the
+                listener is transacted with automatic acknowledgment.'
+            auto-startup: 'true # Start the container automatically on startup.'
+            concurrency: '# Minimum number of concurrent consumers.'
+            max-concurrency: '# Maximum number of concurrent consumers.'
+        pub-sub-domain: 'false # Specify if the default destination type is topic.'
+        template:
+            default-destination: '# Default destination to use on send/receive operations
+                that do not have a destination parameter.'
+            delivery-delay: '# Delivery delay to use for send calls in milliseconds.'
+            delivery-mode: '# Delivery mode. Enable QoS when set.'
+            priority: '# Priority of a message when sending. Enable QoS when set.'
+            qos-enabled: '# Enable explicit QoS when sending a message.'
+            receive-timeout: '# Timeout to use for receive calls in milliseconds.'
+            time-to-live: '# Time-to-live of a message when sending in milliseconds.
+                Enable QoS when set.'
+    jmx:
+        default-domain: '# JMX domain name.'
+        enabled: 'true # Expose management beans to the JMX domain.'
+        server: 'mbeanServer # MBeanServer bean name.'
+    jooq:
+        sql-dialect: '# SQLDialect JOOQ used when communicating with the configured
+            datasource. For instance `POSTGRES`'
+    jpa:
+        database: '# Target database to operate on, auto-detected by default. Can
+            be alternatively set using the "databasePlatform" property.'
+        database-platform: '# Name of the target database to operate on, auto-detected
+            by default. Can be alternatively set using the "Database" enum.'
+        generate-ddl: 'false # Initialize the schema on startup.'
+        hibernate:
+            ddl-auto: '# DDL mode. This is actually a shortcut for the "hibernate.hbm2ddl.auto"
+                property. Default to "create-drop" when using an embedded database,
+                "none" otherwise.'
+            naming:
+                implicit-strategy: '# Hibernate 5 implicit naming strategy fully qualified
+                    name.'
+                physical-strategy: '# Hibernate 5 physical naming strategy fully qualified
+                    name.'
+                strategy: '# Hibernate 4 naming strategy fully qualified name. Not
+                    supported with Hibernate 5.'
+            use-new-id-generator-mappings: '# Use Hibernate''s newer IdentifierGenerator
+                for AUTO, TABLE and SEQUENCE.'
+        open-in-view: 'true # Register OpenEntityManagerInViewInterceptor. Binds a
+            JPA EntityManager to the thread for the entire processing of the request.'
+        properties:
+            '*': '# Additional native properties to set on the JPA provider.'
+        show-sql: 'false # Enable logging of SQL statements.'
+    jta:
+        atomikos:
+            connectionfactory:
+                borrow-connection-timeout: '30 # Timeout, in seconds, for borrowing
+                    connections from the pool.'
+                ignore-session-transacted-flag: 'true # Whether or not to ignore the
+                    transacted flag when creating session.'
+                local-transaction-mode: 'false # Whether or not local transactions
+                    are desired.'
+                maintenance-interval: '60 # The time, in seconds, between runs of
+                    the pool''s maintenance thread.'
+                max-idle-time: '60 # The time, in seconds, after which connections
+                    are cleaned up from the pool.'
+                max-lifetime: '0 # The time, in seconds, that a connection can be
+                    pooled for before being destroyed. 0 denotes no limit.'
+                max-pool-size: '1 # The maximum size of the pool.'
+                min-pool-size: '1 # The minimum size of the pool.'
+                reap-timeout: '0 # The reap timeout, in seconds, for borrowed connections.
+                    0 denotes no limit.'
+                unique-resource-name: 'jmsConnectionFactory # The unique name used
+                    to identify the resource during recovery.'
+            datasource:
+                borrow-connection-timeout: '30 # Timeout, in seconds, for borrowing
+                    connections from the pool.'
+                default-isolation-level: '# Default isolation level of connections
+                    provided by the pool.'
+                login-timeout: '# Timeout, in seconds, for establishing a database
+                    connection.'
+                maintenance-interval: '60 # The time, in seconds, between runs of
+                    the pool''s maintenance thread.'
+                max-idle-time: '60 # The time, in seconds, after which connections
+                    are cleaned up from the pool.'
+                max-lifetime: '0 # The time, in seconds, that a connection can be
+                    pooled for before being destroyed. 0 denotes no limit.'
+                max-pool-size: '1 # The maximum size of the pool.'
+                min-pool-size: '1 # The minimum size of the pool.'
+                reap-timeout: '0 # The reap timeout, in seconds, for borrowed connections.
+                    0 denotes no limit.'
+                test-query: '# SQL query or statement used to validate a connection
+                    before returning it.'
+                unique-resource-name: 'dataSource # The unique name used to identify
+                    the resource during recovery.'
+            properties:
+                checkpoint-interval: '500 # Interval between checkpoints.'
+                console-file-count: '1 # Number of debug logs files that can be created.'
+                console-file-limit: '-1 # How many bytes can be stored at most in
+                    debug logs files.'
+                console-file-name: 'tm.out # Debug logs file name.'
+                console-log-level: 'warn # Console log level.'
+                default-jta-timeout: '10000 # Default timeout for JTA transactions.'
+                enable-logging: 'true # Enable disk logging.'
+                force-shutdown-on-vm-exit: 'false # Specify if a VM shutdown should
+                    trigger forced shutdown of the transaction core.'
+                log-base-dir: '# Directory in which the log files should be stored.'
+                log-base-name: 'tmlog # Transactions log file base name.'
+                max-actives: '50 # Maximum number of active transactions.'
+                max-timeout: '300000 # Maximum timeout (in milliseconds) that can
+                    be allowed for transactions.'
+                output-dir: '# Directory in which to store the debug log files.'
+                serial-jta-transactions: 'true # Specify if sub-transactions should
+                    be joined when possible.'
+                service: '# Transaction manager implementation that should be started.'
+                threaded-two-phase-commit: 'true # Use different (and concurrent)
+                    threads for two-phase commit on the participating resources.'
+                transaction-manager-unique-name: '# Transaction manager''s unique
+                    name.'
+        bitronix:
+            connectionfactory:
+                acquire-increment: '1 # Number of connections to create when growing
+                    the pool.'
+                acquisition-interval: '1 # Time, in seconds, to wait before trying
+                    to acquire a connection again after an invalid connection was
+                    acquired.'
+                acquisition-timeout: '30 # Timeout, in seconds, for acquiring connections
+                    from the pool.'
+                allow-local-transactions: 'true # Whether or not the transaction manager
+                    should allow mixing XA and non-XA transactions.'
+                apply-transaction-timeout: 'false # Whether or not the transaction
+                    timeout should be set on the XAResource when it is enlisted.'
+                automatic-enlisting-enabled: 'true # Whether or not resources should
+                    be enlisted and delisted automatically.'
+                cache-producers-consumers: 'true # Whether or not produces and consumers
+                    should be cached.'
+                defer-connection-release: 'true # Whether or not the provider can
+                    run many transactions on the same connection and supports transaction
+                    interleaving.'
+                ignore-recovery-failures: 'false # Whether or not recovery failures
+                    should be ignored.'
+                max-idle-time: '60 # The time, in seconds, after which connections
+                    are cleaned up from the pool.'
+                max-pool-size: '10 # The maximum size of the pool. 0 denotes no limit.'
+                min-pool-size: '0 # The minimum size of the pool.'
+                password: '# The password to use to connect to the JMS provider.'
+                share-transaction-connections: 'false #  Whether or not connections
+                    in the ACCESSIBLE state can be shared within the context of a
+                    transaction.'
+                test-connections: 'true # Whether or not connections should be tested
+                    when acquired from the pool.'
+                two-pc-ordering-position: '1 # The position that this resource should
+                    take during two-phase commit (always first is Integer.MIN_VALUE,
+                    always last is Integer.MAX_VALUE).'
+                unique-name: 'jmsConnectionFactory # The unique name used to identify
+                    the resource during recovery.'
+                use-tm-join: true Whether or not TMJOIN should be used when starting XAResources.
+                user: '# The user to use to connect to the JMS provider.'
+            datasource:
+                acquire-increment: '1 # Number of connections to create when growing
+                    the pool.'
+                acquisition-interval: '1 # Time, in seconds, to wait before trying
+                    to acquire a connection again after an invalid connection was
+                    acquired.'
+                acquisition-timeout: '30 # Timeout, in seconds, for acquiring connections
+                    from the pool.'
+                allow-local-transactions: 'true # Whether or not the transaction manager
+                    should allow mixing XA and non-XA transactions.'
+                apply-transaction-timeout: 'false # Whether or not the transaction
+                    timeout should be set on the XAResource when it is enlisted.'
+                automatic-enlisting-enabled: 'true # Whether or not resources should
+                    be enlisted and delisted automatically.'
+                cursor-holdability: '# The default cursor holdability for connections.'
+                defer-connection-release: 'true # Whether or not the database can
+                    run many transactions on the same connection and supports transaction
+                    interleaving.'
+                enable-jdbc4-connection-test: '# Whether or not Connection.isValid()
+                    is called when acquiring a connection from the pool.'
+                ignore-recovery-failures: 'false # Whether or not recovery failures
+                    should be ignored.'
+                isolation-level: '# The default isolation level for connections.'
+                local-auto-commit: '# The default auto-commit mode for local transactions.'
+                login-timeout: '# Timeout, in seconds, for establishing a database
+                    connection.'
+                max-idle-time: '60 # The time, in seconds, after which connections
+                    are cleaned up from the pool.'
+                max-pool-size: '10 # The maximum size of the pool. 0 denotes no limit.'
+                min-pool-size: '0 # The minimum size of the pool.'
+                prepared-statement-cache-size: '0 # The target size of the prepared
+                    statement cache. 0 disables the cache.'
+                share-transaction-connections: 'false #  Whether or not connections
+                    in the ACCESSIBLE state can be shared within the context of a
+                    transaction.'
+                test-query: '# SQL query or statement used to validate a connection
+                    before returning it.'
+                two-pc-ordering-position: '1 # The position that this resource should
+                    take during two-phase commit (always first is Integer.MIN_VALUE,
+                    always last is Integer.MAX_VALUE).'
+                unique-name: 'dataSource # The unique name used to identify the resource
+                    during recovery.'
+                use-tm-join: true Whether or not TMJOIN should be used when starting XAResources.
+            properties:
+                allow-multiple-lrc: 'false # Allow multiple LRC resources to be enlisted
+                    into the same transaction.'
+                asynchronous2-pc: 'false # Enable asynchronously execution of two
+                    phase commit.'
+                background-recovery-interval-seconds: '60 # Interval in seconds at
+                    which to run the recovery process in the background.'
+                current-node-only-recovery: 'true # Recover only the current node.'
+                debug-zero-resource-transaction: 'false # Log the creation and commit
+                    call stacks of transactions executed without a single enlisted
+                    resource.'
+                default-transaction-timeout: '60 # Default transaction timeout in
+                    seconds.'
+                disable-jmx: 'false # Enable JMX support.'
+                exception-analyzer: '# Set the fully qualified name of the exception
+                    analyzer implementation to use.'
+                filter-log-status: 'false # Enable filtering of logs so that only
+                    mandatory logs are written.'
+                force-batching-enabled: 'true #  Set if disk forces are batched.'
+                forced-write-enabled: 'true # Set if logs are forced to disk.'
+                graceful-shutdown-interval: '60 # Maximum amount of seconds the TM
+                    will wait for transactions to get done before aborting them at
+                    shutdown time.'
+                jndi-transaction-synchronization-registry-name: '# JNDI name of the
+                    TransactionSynchronizationRegistry.'
+                jndi-user-transaction-name: '# JNDI name of the UserTransaction.'
+                journal: 'disk # Name of the journal. Can be ''disk'', ''null'' or
+                    a class name.'
+                log-part1-filename: 'btm1.tlog # Name of the first fragment of the
+                    journal.'
+                log-part2-filename: 'btm2.tlog # Name of the second fragment of the
+                    journal.'
+                max-log-size-in-mb: '2 # Maximum size in megabytes of the journal
+                    fragments.'
+                resource-configuration-filename: '# ResourceLoader configuration file
+                    name.'
+                server-id: '# ASCII ID that must uniquely identify this TM instance.
+                    Default to the machine''s IP address.'
+                skip-corrupted-logs: 'false # Skip corrupted transactions log entries.'
+                warn-about-zero-resource-transaction: 'true # Log a warning for transactions
+                    executed without a single enlisted resource.'
+        enabled: 'true # Enable JTA support.'
+        log-dir: '# Transaction logs directory.'
+        narayana:
+            default-timeout: '60 # Transaction timeout in seconds.'
+            expiry-scanners: 'com.arjuna.ats.internal.arjuna.recovery.ExpiredTransactionStatusManagerScanner
+                # Comma-separated list of expiry scanners.'
+            log-dir: '# Transaction object store directory.'
+            one-phase-commit: 'true # Enable one phase commit optimisation.'
+            periodic-recovery-period: '120 # Interval in which periodic recovery scans
+                are performed in seconds.'
+            recovery-backoff-period: '10 # Back off period between first and second
+                phases of the recovery scan in seconds.'
+            recovery-db-pass: '# Database password to be used by recovery manager.'
+            recovery-db-user: '# Database username to be used by recovery manager.'
+            recovery-jms-pass: '# JMS password to be used by recovery manager.'
+            recovery-jms-user: '# JMS username to be used by recovery manager.'
+            recovery-modules: '# Comma-separated list of recovery modules.'
+            transaction-manager-id: '1 # Unique transaction manager id.'
+            xa-resource-orphan-filters: '# Comma-separated list of orphan filters.'
+        transaction-manager-id: '# Transaction manager unique identifier.'
+    kafka:
+        bootstrap-servers: '# Comma-delimited list of host:port pairs to use for establishing
+            the initial connection to the Kafka cluster.'
+        client-id: '# Id to pass to the server when making requests; used for server-side
+            logging.'
+        consumer:
+            auto-commit-interval: '# Frequency in milliseconds that the consumer offsets
+                are auto-committed to Kafka if ''enable.auto.commit'' true.'
+            auto-offset-reset: '# What to do when there is no initial offset in Kafka
+                or if the current offset does not exist any more on the server.'
+            bootstrap-servers: '# Comma-delimited list of host:port pairs to use for
+                establishing the initial connection to the Kafka cluster.'
+            client-id: '# Id to pass to the server when making requests; used for
+                server-side logging.'
+            enable-auto-commit: '# If true the consumer''s offset will be periodically
+                committed in the background.'
+            fetch-max-wait: '# Maximum amount of time in milliseconds the server will
+                block before answering the fetch request if there isn''t sufficient
+                data to immediately satisfy the requirement given by "fetch.min.bytes".'
+            fetch-min-size: '# Minimum amount of data the server should return for
+                a fetch request in bytes.'
+            group-id: '# Unique string that identifies the consumer group this consumer
+                belongs to.'
+            heartbeat-interval: '# Expected time in milliseconds between heartbeats
+                to the consumer coordinator.'
+            key-deserializer: '# Deserializer class for keys.'
+            max-poll-records: '# Maximum number of records returned in a single call
+                to poll().'
+            value-deserializer: '# Deserializer class for values.'
+        listener:
+            ack-count: '# Number of records between offset commits when ackMode is
+                "COUNT" or "COUNT_TIME".'
+            ack-mode: '# Listener AckMode; see the spring-kafka documentation.'
+            ack-time: '# Time in milliseconds between offset commits when ackMode
+                is "TIME" or "COUNT_TIME".'
+            concurrency: '# Number of threads to run in the listener containers.'
+            poll-timeout: '# Timeout in milliseconds to use when polling the consumer.'
+        producer:
+            acks: '# Number of acknowledgments the producer requires the leader to
+                have received before considering a request complete.'
+            batch-size: '# Number of records to batch before sending.'
+            bootstrap-servers: '# Comma-delimited list of host:port pairs to use for
+                establishing the initial connection to the Kafka cluster.'
+            buffer-memory: '# Total bytes of memory the producer can use to buffer
+                records waiting to be sent to the server.'
+            client-id: '# Id to pass to the server when making requests; used for
+                server-side logging.'
+            compression-type: '# Compression type for all data generated by the producer.'
+            key-serializer: '# Serializer class for keys.'
+            retries: '# When greater than zero, enables retrying of failed sends.'
+            value-serializer: '# Serializer class for values.'
+        properties:
+            '*': '# Additional properties used to configure the client.'
+        ssl:
+            key-password: '# Password of the private key in the key store file.'
+            keystore-location: '# Location of the key store file.'
+            keystore-password: '# Store password for the key store file.'
+            truststore-location: '# Location of the trust store file.'
+            truststore-password: '# Store password for the trust store file.'
+        template:
+            default-topic: '# Default topic to which messages will be sent.'
+    ldap:
+        base: '# Base suffix from which all operations should originate.'
+        base-environment:
+            '*': '# LDAP specification settings.'
+        embedded:
+            base-dn: '# The base DN'
+            credential:
+                password: '# Embedded LDAP password.'
+                username: '# Embedded LDAP username.'
+            ldif: 'classpath:schema.ldif # Schema (LDIF) script resource reference.'
+            port: '# Embedded LDAP port.'
+            validation:
+                enabled: 'true # Enable LDAP schema validation.'
+                schema: '# Path to the custom schema.'
+        password: '# Login password of the server.'
+        urls: '# LDAP URLs of the server.'
+        username: '# Login user of the server.'
+    mail:
+        default-encoding: 'UTF-8 # Default MimeMessage encoding.'
+        host: '# SMTP server host. For instance `smtp.example.com`'
+        jndi-name: '# Session JNDI name. When set, takes precedence to others mail
+            settings.'
+        password: '# Login password of the SMTP server.'
+        port: '# SMTP server port.'
+        properties:
+            '*': '# Additional JavaMail session properties.'
+        protocol: 'smtp # Protocol used by the SMTP server.'
+        test-connection: 'false # Test that the mail server is available on startup.'
+        username: '# Login user of the SMTP server.'
+    main:
+        banner-mode: 'console # Mode used to display the banner when the application
+            runs.'
+        sources: '# Sources (class name, package name or XML resource location) to
+            include in the ApplicationContext.'
+        web-environment: '# Run the application in a web environment (auto-detected
+            by default).'
+    mandatory-file-encoding: '# Expected character encoding the application must use.'
+    messages:
+        always-use-message-format: 'false # Set whether to always apply the MessageFormat
+            rules, parsing even messages without arguments.'
+        basename: 'messages # Comma-separated list of basenames, each following the
+            ResourceBundle convention.'
+        cache-seconds: '-1 # Loaded resource bundle files cache expiration, in seconds.
+            When set to -1, bundles are cached forever.'
+        encoding: 'UTF-8 # Message bundles encoding.'
+        fallback-to-system-locale: 'true # Set whether to fall back to the system
+            Locale if no files for a specific Locale have been found.'
+    metrics:
+        export:
+            aggregate:
+                key-pattern: '# Pattern that tells the aggregator what to do with
+                    the keys from the source repository.'
+                prefix: '# Prefix for global repository if active.'
+            delay-millis: '5000 # Delay in milliseconds between export ticks. Metrics
+                are exported to external sources on a schedule with this delay.'
+            enabled: 'true # Flag to enable metric export (assuming a MetricWriter
+                is available).'
+            excludes: '# List of patterns for metric names to exclude. Applied after
+                the includes.'
+            includes: '# List of patterns for metric names to include.'
+            redis:
+                key: 'keys.spring.metrics # Key for redis repository export (if active).'
+                prefix: 'spring.metrics # Prefix for redis repository if active.'
+            send-latest: '# Flag to switch off any available optimizations based on
+                not exporting unchanged metric values.'
+            statsd:
+                host: '# Host of a statsd server to receive exported metrics.'
+                port: '8125 # Port of a statsd server to receive exported metrics.'
+                prefix: '# Prefix for statsd exported metrics.'
+            triggers:
+                '*': '# Specific trigger properties per MetricWriter bean name.'
+    mobile:
+        devicedelegatingviewresolver:
+            enable-fallback: 'false # Enable support for fallback resolution.'
+            enabled: 'false # Enable device view resolver.'
+            mobile-prefix: 'mobile/ # Prefix that gets prepended to view names for
+                mobile devices.'
+            mobile-suffix: '# Suffix that gets appended to view names for mobile devices.'
+            normal-prefix: '# Prefix that gets prepended to view names for normal
+                devices.'
+            normal-suffix: '# Suffix that gets appended to view names for normal devices.'
+            tablet-prefix: 'tablet/ # Prefix that gets prepended to view names for
+                tablet devices.'
+            tablet-suffix: '# Suffix that gets appended to view names for tablet devices.'
+        sitepreference:
+            enabled: 'true # Enable SitePreferenceHandler.'
+    mongodb:
+        embedded:
+            features: 'SYNC_DELAY # Comma-separated list of features to enable.'
+            storage:
+                database-dir: '# Directory used for data storage.'
+                oplog-size: '# Maximum size of the oplog in megabytes.'
+                repl-set-name: '# Name of the replica set.'
+            version: '2.6.10 # Version of Mongo to use.'
+    mustache:
+        allow-request-override: '# Set whether HttpServletRequest attributes are allowed
+            to override (hide) controller generated model attributes of the same name.'
+        allow-session-override: '# Set whether HttpSession attributes are allowed
+            to override (hide) controller generated model attributes of the same name.'
+        cache: '# Enable template caching.'
+        charset: '# Template encoding.'
+        check-template-location: '# Check that the templates location exists.'
+        content-type: '# Content-Type value.'
+        enabled: '# Enable MVC view resolution for this technology.'
+        expose-request-attributes: '# Set whether all request attributes should be
+            added to the model prior to merging with the template.'
+        expose-session-attributes: '# Set whether all HttpSession attributes should
+            be added to the model prior to merging with the template.'
+        expose-spring-macro-helpers: '# Set whether to expose a RequestContext for
+            use by Spring''s macro library, under the name "springMacroRequestContext".'
+        prefix: 'classpath:/templates/ # Prefix to apply to template names.'
+        request-context-attribute: '# Name of the RequestContext attribute for all
+            views.'
+        suffix: '.html # Suffix to apply to template names.'
+        view-names: '# White list of view names that can be resolved.'
+    mvc:
+        async:
+            request-timeout: '# Amount of time (in milliseconds) before asynchronous
+                request handling times out.'
+        date-format: '# Date format to use. For instance `dd/MM/yyyy`.'
+        dispatch-options-request: 'true # Dispatch OPTIONS requests to the FrameworkServlet
+            doService method.'
+        dispatch-trace-request: 'false # Dispatch TRACE requests to the FrameworkServlet
+            doService method.'
+        favicon:
+            enabled: 'true # Enable resolution of favicon.ico.'
+        formcontent:
+            putfilter:
+                enabled: 'true # Enable Spring''s HttpPutFormContentFilter.'
+        ignore-default-model-on-redirect: 'true # If the content of the "default"
+            model should be ignored during redirect scenarios.'
+        locale: '# Locale to use. By default, this locale is overridden by the "Accept-Language"
+            header.'
+        locale-resolver: 'accept-header # Define how the locale should be resolved.'
+        log-resolved-exception: 'false # Enable warn logging of exceptions resolved
+            by a "HandlerExceptionResolver".'
+        media-types:
+            '*': '# Maps file extensions to media types for content negotiation.'
+        message-codes-resolver-format: '# Formatting strategy for message codes. For
+            instance `PREFIX_ERROR_CODE`.'
+        servlet:
+            load-on-startup: '-1 # Load on startup priority of the Spring Web Services
+                servlet.'
+        static-path-pattern: '/** # Path pattern used for static resources.'
+        throw-exception-if-no-handler-found: 'false # If a "NoHandlerFoundException"
+            should be thrown if no Handler was found to process a request.'
+        view:
+            prefix: '# Spring MVC view prefix.'
+            suffix: '# Spring MVC view suffix.'
+    output:
+        ansi:
+            enabled: 'detect # Configure the ANSI output.'
+    pid:
+        fail-on-write-error: '# Fail if ApplicationPidFileWriter is used but it cannot
+            write the PID file.'
+        file: '# Location of the PID file to write (if ApplicationPidFileWriter is
+            used).'
+    profiles:
+        active: '# Comma-separated list (or list if using YAML) of active profiles.'
+        include: '# Unconditionally activate the specified comma separated profiles
+            (or list of profiles if using YAML).'
+    rabbitmq:
+        addresses: '# Comma-separated list of addresses to which the client should
+            connect.'
+        cache:
+            channel:
+                checkout-timeout: '# Number of milliseconds to wait to obtain a channel
+                    if the cache size has been reached.'
+                size: '# Number of channels to retain in the cache.'
+            connection:
+                mode: 'channel # Connection factory cache mode.'
+                size: '# Number of connections to cache.'
+        connection-timeout: '# Connection timeout, in milliseconds; zero for infinite.'
+        dynamic: 'true # Create an AmqpAdmin bean.'
+        host: 'localhost # RabbitMQ host.'
+        listener:
+            acknowledge-mode: '# Acknowledge mode of container.'
+            auto-startup: 'true # Start the container automatically on startup.'
+            concurrency: '# Minimum number of consumers.'
+            default-requeue-rejected: '# Whether or not to requeue delivery failures;
+                default `true`.'
+            idle-event-interval: '# How often idle container events should be published
+                in milliseconds.'
+            max-concurrency: '# Maximum number of consumers.'
+            prefetch: '# Number of messages to be handled in a single request. It
+                should be greater than or equal to the transaction size (if used).'
+            retry:
+                enabled: 'false # Whether or not publishing retries are enabled.'
+                initial-interval: '1000 # Interval between the first and second attempt
+                    to deliver a message.'
+                max-attempts: '3 # Maximum number of attempts to deliver a message.'
+                max-interval: '10000 # Maximum interval between attempts.'
+                multiplier: '1.0 # A multiplier to apply to the previous delivery
+                    retry interval.'
+                stateless: 'true # Whether or not retry is stateless or stateful.'
+            transaction-size: '# Number of messages to be processed in a transaction.
+                For best results it should be less than or equal to the prefetch count.'
+        password: '# Login to authenticate against the broker.'
+        port: '5672 # RabbitMQ port.'
+        publisher-confirms: 'false # Enable publisher confirms.'
+        publisher-returns: 'false # Enable publisher returns.'
+        requested-heartbeat: '# Requested heartbeat timeout, in seconds; zero for
+            none.'
+        ssl:
+            algorithm: '# SSL algorithm to use. By default configure by the rabbit
+                client library.'
+            enabled: 'false # Enable SSL support.'
+            key-store: '# Path to the key store that holds the SSL certificate.'
+            key-store-password: '# Password used to access the key store.'
+            trust-store: '# Trust store that holds SSL certificates.'
+            trust-store-password: '# Password used to access the trust store.'
+        template:
+            mandatory: 'false # Enable mandatory messages.'
+            receive-timeout: '0 # Timeout for `receive()` methods.'
+            reply-timeout: '5000 # Timeout for `sendAndReceive()` methods.'
+            retry:
+                enabled: 'false # Set to true to enable retries in the `RabbitTemplate`.'
+                initial-interval: '1000 # Interval between the first and second attempt
+                    to publish a message.'
+                max-attempts: '3 # Maximum number of attempts to publish a message.'
+                max-interval: '10000 # Maximum number of attempts to publish a message.'
+                multiplier: '1.0 # A multiplier to apply to the previous publishing
+                    retry interval.'
+        username: '# Login user to authenticate to the broker.'
+        virtual-host: '# Virtual host to use when connecting to the broker.'
+    redis:
+        cluster:
+            max-redirects: '# Maximum number of redirects to follow when executing
+                commands across the cluster.'
+            nodes: '# Comma-separated list of "host:port" pairs to bootstrap from.'
+        database: '0 # Database index used by the connection factory.'
+        host: 'localhost # Redis server host.'
+        password: '# Login password of the redis server.'
+        pool:
+            max-active: '8 # Max number of connections that can be allocated by the
+                pool at a given time. Use a negative value for no limit.'
+            max-idle: '8 # Max number of "idle" connections in the pool. Use a negative
+                value to indicate an unlimited number of idle connections.'
+            max-wait: '-1 # Maximum amount of time (in milliseconds) a connection
+                allocation should block before throwing an exception when the pool
+                is exhausted. Use a negative value to block indefinitely.'
+            min-idle: '0 # Target for the minimum number of idle connections to maintain
+                in the pool. This setting only has an effect if it is positive.'
+        port: '6379 # Redis server port.'
+        sentinel:
+            master: '# Name of Redis server.'
+            nodes: '# Comma-separated list of host:port pairs.'
+        ssl: 'false # Enable SSL support.'
+        timeout: '0 # Connection timeout in milliseconds.'
+        url: '# Connection URL, will override host, port and password (user will be
+            ignored), e.g. redis://user:password@example.com:6379'
+    resources:
+        add-mappings: 'true # Enable default resource handling.'
+        cache-period: '# Cache period for the resources served by the resource handler,
+            in seconds.'
+        chain:
+            cache: 'true # Enable caching in the Resource chain.'
+            enabled: '# Enable the Spring Resource Handling chain. Disabled by default
+                unless at least one strategy has been enabled.'
+            gzipped: 'false # Enable resolution of already gzipped resources.'
+            html-application-cache: 'false # Enable HTML5 application cache manifest
+                rewriting.'
+            strategy:
+                content:
+                    enabled: 'false # Enable the content Version Strategy.'
+                    paths: '/** # Comma-separated list of patterns to apply to the
+                        Version Strategy.'
+                fixed:
+                    enabled: 'false # Enable the fixed Version Strategy.'
+                    paths: '/** # Comma-separated list of patterns to apply to the
+                        Version Strategy.'
+                    version: '# Version string to use for the Version Strategy.'
+        static-locations: 'classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+            # Locations of static resources.'
+    sendgrid:
+        api-key: '# SendGrid api key (alternative to username/password)'
+        password: '# SendGrid account password'
+        proxy:
+            host: '# SendGrid proxy host'
+            port: '# SendGrid proxy port'
+        username: '# SendGrid account username'
+    session:
+        hazelcast:
+            flush-mode: 'on-save # Sessions flush mode.'
+            map-name: 'spring:session:sessions # Name of the map used to store sessions.'
+        jdbc:
+            initializer:
+                enabled: '# Create the required session tables on startup if necessary.
+                    Enabled automatically if the default table name is set or a custom
+                    schema is configured.'
+            schema: 'classpath:org/springframework/session/jdbc/schema-@@platform@@.sql
+                # Path to the SQL file to use to initialize the database schema.'
+            table-name: 'SPRING_SESSION # Name of database table used to store sessions.'
+        mongo:
+            collection-name: 'sessions # Collection name used to store sessions.'
+        redis:
+            flush-mode: 'on-save # Sessions flush mode.'
+            namespace: '# Namespace for keys used to store sessions.'
+        store-type: '# Session store type.'
+    social:
+        auto-connection-views: 'false # Enable the connection status view for supported
+            providers.'
+        facebook:
+            app-id: '# your application''s Facebook App ID'
+            app-secret: '# your application''s Facebook App Secret'
+        linkedin:
+            app-id: '# your application''s LinkedIn App ID'
+            app-secret: '# your application''s LinkedIn App Secret'
+        twitter:
+            app-id: '# your application''s Twitter App ID'
+            app-secret: '# your application''s Twitter App Secret'
+    test:
+        database:
+            replace: 'any # Type of existing DataSource to replace.'
+        mockmvc:
+            print: 'default # MVC Print option.'
+    thymeleaf:
+        cache: 'true # Enable template caching.'
+        check-template: 'true # Check that the template exists before rendering it.'
+        check-template-location: 'true # Check that the templates location exists.'
+        content-type: 'text/html # Content-Type value.'
+        enabled: 'true # Enable MVC Thymeleaf view resolution.'
+        encoding: 'UTF-8 # Template encoding.'
+        excluded-view-names: '# Comma-separated list of view names that should be
+            excluded from resolution.'
+        mode: 'HTML5 # Template mode to be applied to templates. See also StandardTemplateModeHandlers.'
+        prefix: 'classpath:/templates/ # Prefix that gets prepended to view names
+            when building a URL.'
+        suffix: '.html # Suffix that gets appended to view names when building a URL.'
+        template-resolver-order: '# Order of the template resolver in the chain.'
+        view-names: '# Comma-separated list of view names that can be resolved.'
+    transaction:
+        default-timeout: '# Default transaction timeout in seconds.'
+        rollback-on-commit-failure: '# Perform the rollback on commit failures.'
+    webservices:
+        path: '/services # Path that serves as the base URI for the services.'
+        servlet:
+            init: '# Servlet init parameters to pass to Spring Web Services.'
+            load-on-startup: '-1 # Load on startup priority of the Spring Web Services
+                servlet.'
